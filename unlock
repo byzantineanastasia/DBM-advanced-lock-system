@@ -1,0 +1,25 @@
+{
+  "name": "unlock",
+  "permissions": "MANAGE_CHANNELS",
+  "restriction": "1",
+  "_id": "PtCRj",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "0",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "",
+      "message": "this channel has been unlocked",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}

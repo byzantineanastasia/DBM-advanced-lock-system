@@ -1,0 +1,146 @@
+{
+  "name": "lock",
+  "permissions": "MANAGE_CHANNELS",
+  "restriction": "1",
+  "_id": "cMUOw",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "time",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "reason",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "time",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "true",
+      "message": "${mentionedChannel} has been locked until further notice\n\n${tempVars(\"reason\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "time",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "14",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "3",
+      "varName": "",
+      "message": "this channel will been locked for 1 minute\n\n${tempVars(\"reason\")}\n\n",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "time": "1",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "0",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "",
+      "message": "this channel has been unlocked",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "true",
+      "permission": "SEND_MESSAGES",
+      "state": "1",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "channel",
+      "message": "${mentionedChannel} will be locked for ${tempVars(\"time\")} minuntes.\n\n${tempVars(\"reason\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "${tempVars(\"time\")}",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "permission": "SEND_MESSAGES",
+      "state": "0",
+      "name": "Set Channel Permissions"
+    },
+    {
+      "channel": "3",
+      "varName": "",
+      "message": "this channel has been unlocked",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

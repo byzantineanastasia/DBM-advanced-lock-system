@@ -5,3 +5,4 @@ the lock command lets you lock a channel permanently or temporarly with the opti
 [p}lock <channel> <time(in minutes)(optional)> <reason(optional)>
   
  [p]unlock <channel>
+  
